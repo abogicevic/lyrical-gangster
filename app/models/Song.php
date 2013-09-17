@@ -8,8 +8,13 @@ class Song extends Eloquent{
 	public function sender()
 	{
 	 
-		return $this->has_many('Song');
+		return $this->belongs_to('Sender');
 	
+	}
+
+	public add_song()
+	{
+		Input::all();
 	}
 
 	public function get_lyrics_by_author($criteria)

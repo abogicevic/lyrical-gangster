@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSongsTable extends Migration {
+class CreateAuthorsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,16 +11,11 @@ class CreateSongsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('songs', function($table)
+		Schema::table('authors', function($table)
 		{
 			$table->create();
-			
 			$table->increments('id');
-			$table->string('song_name');
-			$table->string('genre');
-			$table->text('lyrics');
-			$table->timestamps();
-
+			$table->string('author_name');
 		});
 	}
 
@@ -31,7 +26,7 @@ class CreateSongsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('songs');
+		//
 	}
 
 }
